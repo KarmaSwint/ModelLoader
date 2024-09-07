@@ -1,0 +1,5 @@
+requests  # Updated version
+InquirerPy
+rich
+psutil
+beautifulsoup4

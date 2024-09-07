@@ -1,0 +1,5 @@
+config.json
+.cursorrules
+.venv
+.vscode
+__pycache__
