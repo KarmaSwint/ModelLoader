@@ -63,7 +63,7 @@ def download_version(version: Dict, comfyui_dir: str, api_key: str) -> None:
         "Hypernetwork": "models/hypernetworks",
         "Unet": "models/unet",
         "VAE": "models/vae",
-        "Workflows": "users/default/workflows",
+        "Workflows": "user/default/workflows",
         "Controlnet": "models/controlnet",
         "Poses": "models/poses"
     }.get(model_type, "unknown")
