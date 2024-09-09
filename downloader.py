@@ -54,20 +54,20 @@ def download_version(version: Dict, comfyui_dir: str, api_key: str) -> None:
     
     model_type = version.get('type', 'Unknown')
     subdirectory = {
-        "Checkpoint": "checkpoints",
-        "LORA": "loras",
-        "Upscaler": "upscale_models",
-        "TextualInversion": "embeddings",
-        "AestheticGradient": "embeddings",
-        "Hypernetwork": "hypernetworks",
-        "Unet": "unet",
-        "VAE": "vae",
-        "Workflows": "workflows",
-        "Controlnet": "controlnet",
-        "Poses": "poses"
+        "Checkpoint": "models/checkpoints",
+        "LORA": "models/loras",
+        "Upscaler": "models/upscale_models",
+        "TextualInversion": "models/embeddings",
+        "AestheticGradient": "models/embeddings",
+        "Hypernetwork": "models/hypernetworks",
+        "Unet": "models/unet",
+        "VAE": "models/vae",
+        "Workflows": "users/default/workflows",
+        "Controlnet": "models/controlnet",
+        "Poses": "models/poses"
     }.get(model_type, "unknown")
 
-    full_file_path = os.path.join(comfyui_dir, "models", subdirectory, file_name)
+    full_file_path = os.path.join(comfyui_dir, subdirectory, file_name)
     os.makedirs(os.path.dirname(full_file_path), exist_ok=True)
     
     console.print(f"[bold green]Downloading to: {full_file_path}[/bold green]")
