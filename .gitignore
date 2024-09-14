@@ -3,3 +3,5 @@ config.json
 .venv
 .vscode
 __pycache__
+Dockerfile
+start.sh

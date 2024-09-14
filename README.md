@@ -18,7 +18,7 @@ Features (or why this tool is awesome):
 
 How to use this amazing tool:
 -----------------------------
-1. Clone this repo (git clone https://github.com/your-repo-url.git)
+1. Clone this repo (git clone https://github.com/karmaswint/ModelLoader)
 2. Install the requirements (pip install -r requirements.txt)
 3. Run main.py (python main.py)
 4. Follow the on-screen prompts like they're the most important instructions ever
