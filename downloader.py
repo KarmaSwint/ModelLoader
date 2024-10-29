@@ -52,10 +52,11 @@ def download_version(version: Dict, comfyui_dir: str, api_key: str) -> None:
     download_url = file_info['downloadUrl']
     file_name = file_info['name']
     
-    version_base_model = version.get('baseModel', '')
     model_type = version.get('type', 'Unknown')
+
+    # Adjusted: If the model type is 'Checkpoint', save it to 'checkpoints2' instead of 'checkpoints'
     subdirectory = {
-        "Checkpoint": "models/checkpoints",
+        "Checkpoint": "models/checkpoints2",  # Changed to checkpoints2
         "LORA": "models/loras",
         "Upscaler": "models/upscale_models",
         "TextualInversion": "models/embeddings",
@@ -68,7 +69,7 @@ def download_version(version: Dict, comfyui_dir: str, api_key: str) -> None:
         "Poses": "models/poses"
     }.get(model_type, "unknown")
 
-    full_file_path = os.path.join(comfyui_dir, subdirectory, version_base_model, file_name)
+    full_file_path = os.path.join(comfyui_dir, subdirectory, file_name)
     os.makedirs(os.path.dirname(full_file_path), exist_ok=True)
     
     console.print(f"[bold green]Downloading to: {full_file_path}[/bold green]")
